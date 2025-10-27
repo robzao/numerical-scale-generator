@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Numerical Scale Generator</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Numerical Scale Generator</h1>
+    </header>
+    <main>
+      <div class="input-group">
+        <label for="base-value">Base Value:</label>
+        <input id="base-value" type="text" value="1" placeholder="0.00">
+      </div>
+      <div class="input-group">
+        <label for="ratio">Ratio:</label>
+        <input id="ratio" type="text" value="2" placeholder="0.00">
+      </div>
+      <div class="input-group">
+        <label for="steps-per-cycle">Steps Per Cycle:</label>
+        <input id="steps-per-cycle" type="number" value="2" min="0" step="1" placeholder="0">
+      </div>
+      <div class="input-group">
+        <label for="cycles-above-base">Cycles Above Base:</label>
+        <input id="cycles-above-base" type="number" value="1" min="0" step="1" placeholder="0">
+      </div>
+      <div class="input-group">
+        <label for="cycles-below-base">Cycles Below Base:</label>
+        <input id="cycles-below-base" type="number" value="1" min="0" step="1" placeholder="0">
+      </div>
+      <div id="output"></div>
+    </main>
+  </div>
+  <script src="./main.js" defer></script>
+</body>
+</html>

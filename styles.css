@@ -1,0 +1,71 @@
+:root {
+  --font-size-h1: 2rem;
+  --line-height-primary: 1.681793;
+  --line-height-secondary: 1.189207;
+}
+
+*,
+::before,
+::after {
+  background-color: inherit;
+  border-width: 0;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: var(line-height-primary);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 480px;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  line-height: var(line-height-secondary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  background-color: white;
+  border-radius: 0.25rem;
+  border: 1px solid gainsboro;
+  display: block;
+  padding: 0.5rem;
+  transition: 250ms all linear;
+  width: 100%;
+}
+
+input:focus {
+  outline: none; 
+  border-color: dodgerblue; 
+  filter: drop-shadow(0 0 2px royalblue);
+}
+
+.output-group {
+  border-bottom: 1px solid gainsboro;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
