@@ -13,6 +13,25 @@ const getValueAtStep = (steps, baseValue, ratio, stepsPerCycle) => {
   return Math.pow(ratio, (1 / stepsPerCycle) * steps) * baseValue;
 };
 
+const sanitizeFloat = (input) => {
+  let value = input.value.replace(/[^\d.]/g, '');
+  const parts = value.split('.');
+  if (parts.length > 2) value = parts[0] + '.' + parts.slice(1).join('');
+  if (value.startsWith('-')) value = value.substring(1);
+  input.value = value;
+};
+
+const sanitizePositiveInteger = (input) => {
+  let value = input.value.replace(/\D/g, '');
+  let intValue = parseInt(value, 10);
+  if (isNaN(intValue)) {
+    input.value = '';
+    return;
+  }
+  if (intValue < 1) intValue = 1;
+  input.value = intValue;
+};
+
 const getInputs = () => {
   return {
     f: parseFloat(baseValue.value),
@@ -62,9 +81,29 @@ const clearAll = () => {
   updateDOM();
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+const handleInput = (e) => {
+  const input = e.target;
+  switch (input.id) {
+    case 'base-value':
+    case 'ratio':
+      sanitizeFloat(input);
+      break;
+    case 'steps-per-cycle':
+    case 'cycles-above-base':
+    case 'cycles-below-base':
+      sanitizePositiveInteger(input);
+      break;
+  }
+  updateDOM();
+};
+
+const setupEventListeners = () => {
   const inputList = document.querySelectorAll('input');
-  inputList.forEach(input => { input.addEventListener('input', updateDOM) });
+  inputList.forEach(input => { input.addEventListener('input', handleInput) });
   resetButton.addEventListener('click', clearAll);
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupEventListeners();
   updateDOM();
 });

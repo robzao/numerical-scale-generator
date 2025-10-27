@@ -17,13 +17,13 @@ The calculation generates a sequence of values by applying the defined ratio exp
 
 ### Input Fields
 
-| Field | Description |
-| :--- | :--- |
-| **Base Value** | The starting number or base value of the scale (e.g., 440 Hz or 16 px). |
-| **Ratio** | The constant multiplier used to move between scale steps (e.g., 1.05946 for a semitone, or 1.618 for the Golden Ratio). |
-| **Steps Per Cycle** | The number of steps that define one full cycle or octave (e.g., 12 for a 12-tone scale). |
-| **Cycles Above Base** | The number of full cycles/octaves to generate **above** the base value. |
-| **Cycles Below Base** | The number of full cycles/octaves to generate **below** the base value. |
+| Field | Restriction | Description |
+| :--- | :--- | :--- |
+| **Base Value** | Number >= 0 | The starting number or base value of the scale (e.g., 440 Hz or 16 px). |
+| **Ratio** | Number >= 0 | The constant multiplier used to move between scale steps (e.g., 1.05946 for a semitone, or 1.618 for the Golden Ratio). |
+| **Steps Per Cycle** | Integer >= 1 | The number of steps that define one full cycle or octave (e.g., 12 for a 12-tone scale). |
+| **Cycles Above Base** | Integer >= 1 | The number of full cycles/octaves to generate **above** the base value. |
+| **Cycles Below Base** | Integer >= 1 | The number of full cycles/octaves to generate **below** the base value. |
 
 ---
 
