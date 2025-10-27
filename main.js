@@ -4,6 +4,7 @@ const stepsPerCycle = document.getElementById('steps-per-cycle');
 const cyclesAboveBase = document.getElementById('cycles-above-base');
 const cyclesBelowBase = document.getElementById('cycles-below-base');
 const outputEl = document.getElementById('output');
+const resetButton = document.getElementById('reset');
 
 const ROUND_PRECISION = 1000000;
 const round = (number) => Math.round(number * ROUND_PRECISION) / ROUND_PRECISION;
@@ -52,8 +53,18 @@ const updateDOM = () => {
   outputEl.innerHTML = html;
 };
 
+const clearAll = () => {
+  baseValue.value = '';
+  ratio.value = '';
+  stepsPerCycle.value = '';
+  cyclesAboveBase.value = '';
+  cyclesBelowBase.value = '';
+  updateDOM();
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   const inputList = document.querySelectorAll('input');
   inputList.forEach(input => { input.addEventListener('input', updateDOM) });
+  resetButton.addEventListener('click', clearAll);
   updateDOM();
 });
