@@ -20,7 +20,7 @@
 body {
   font-family: system-ui, sans-serif;
   font-size: 1rem;
-  line-height: var(line-height-primary);
+  line-height: var(--line-height-primary);
 }
 
 .container {
@@ -32,8 +32,8 @@ body {
 h1 {
   font-size: var(--font-size-h1);
   font-weight: 700;
-  line-height: var(line-height-secondary);
-  margin-bottom: 1rem;
+  line-height: var(--line-height-secondary);
+  margin-bottom: 2rem;
   text-align: center;
 }
 
